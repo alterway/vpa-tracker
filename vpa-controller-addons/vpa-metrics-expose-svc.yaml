@@ -2,12 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: vpa-recommender
-  namespace: kube-system
   labels:
     app: vpa-recommender
 spec:
   selector:
-    app: vpa-recommender
+    app.kubernetes.io/name: vpa
   ports:
     - name: metrics
       port: 8942
